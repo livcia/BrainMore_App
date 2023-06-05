@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:text="PL"/>
         <Switch
+            android:id="@+id/Lng"
             android:paddingBottom="20dp"
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
