@@ -12,13 +12,18 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button OpenFlashCards, OpenWordGame, OpenQuiz;
+    Switch language;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button OpenFlashCards = findViewById(R.id.flashcards);
-        Switch language = findViewById(R.id.Lng);
-        Button OpenWordGame = findViewById(R.id.wordgame);
+
+        OpenFlashCards = findViewById(R.id.flashcards);
+        OpenQuiz = findViewById(R.id.quiz);
+        OpenWordGame = findViewById(R.id.wordgame);
+        language = findViewById(R.id.Lng);
+
         language.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(language.isChecked()){
@@ -30,14 +35,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         OpenFlashCards.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Flashcards.class);
                 startActivity(intent);
             }
         });
-        Button OpenQuiz = findViewById(R.id.quiz);
         OpenQuiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Quiz.class);
