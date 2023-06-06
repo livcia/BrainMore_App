@@ -3,6 +3,7 @@ package com.example.brainmoreapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,11 +19,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        language = findViewById(R.id.Lng);
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.apply();
+        Boolean Ln = pref.getBoolean("BLang", false);
+
+        language.setChecked(Ln);
 
         OpenFlashCards = findViewById(R.id.flashcards);
         OpenQuiz = findViewById(R.id.quiz);
         OpenWordGame = findViewById(R.id.wordgame);
-        language = findViewById(R.id.Lng);
 
         language.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -33,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     OpenFlashCards.setText("Fiszki");
                     OpenWordGame.setText("Gra słów");
                 }
+                editor.putBoolean("BLang", language.isChecked()).commit();
             }
         });
         OpenFlashCards.setOnClickListener(new View.OnClickListener() {
