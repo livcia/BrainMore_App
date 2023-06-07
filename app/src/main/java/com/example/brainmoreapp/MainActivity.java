@@ -15,32 +15,26 @@ public class MainActivity extends AppCompatActivity {
 
     Button OpenFlashCards, OpenWordGame, OpenQuiz;
     Switch language;
+    String TextFlashcards, TextWordPlay;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         language = findViewById(R.id.Lng);
-
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-        SharedPreferences.Editor editor = pref.edit();
-        editor.apply();
-        Boolean Ln = pref.getBoolean("BLang", false);
-
-        language.setChecked(Ln);
-
         OpenFlashCards = findViewById(R.id.flashcards);
         OpenQuiz = findViewById(R.id.quiz);
         OpenWordGame = findViewById(R.id.wordgame);
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        editor = pref.edit();
+        editor.apply();
+        Boolean Ln = pref.getBoolean("BLang", false);
+        language.setChecked(Ln);
+        getLanguage(Ln);
 
         language.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(language.isChecked()){
-                    OpenFlashCards.setText("Flashcards");
-                    OpenWordGame.setText("WordGame");
-                }else{
-                    OpenFlashCards.setText("Fiszki");
-                    OpenWordGame.setText("Gra słów");
-                }
+                getLanguage(language.isChecked());
                 editor.putBoolean("BLang", language.isChecked()).commit();
             }
         });
@@ -63,4 +57,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private void getLanguage(Boolean lang){
+        if (lang){
+            TextFlashcards = "Flashcards";
+            TextWordPlay = "WordGame";
+        }else{
+            TextFlashcards = "Fiszki";
+            TextWordPlay = "Gra słów";
+        }
+        OpenFlashCards.setText(TextFlashcards);
+        OpenWordGame.setText(TextWordPlay);
+    }
+
 }
