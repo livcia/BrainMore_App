@@ -58,18 +58,21 @@ public class MainActivity extends AppCompatActivity {
         OpenFlashCards.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Flashcards.class);
+                intent.putExtra("PL_or_ENG", language.isChecked());
                 startActivity(intent);
             }
         });
         OpenQuiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Quiz.class);
+                intent.putExtra("PL_or_ENG", language.isChecked());
                 startActivity(intent);
             }
         });
         OpenWordGame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), WordGame.class);
+                intent.putExtra("PL_or_ENG", language.isChecked());
                 startActivity(intent);
             }
         });
