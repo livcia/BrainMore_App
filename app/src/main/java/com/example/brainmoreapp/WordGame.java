@@ -23,6 +23,13 @@ public class WordGame extends AppCompatActivity {
         Random rand = new Random();
         int IntwordPL = rand.nextInt(PLWords.length);
         TextView text = findViewById(R.id.textViewGenerate);
+        Button drawWord = findViewById(R.id.drawWord);
+        if(lang){
+            drawWord.setText("Draw word");
+        }else{
+            drawWord.setText("Losuj slowo");
+        }
+
     }
     public void clickEvent(View v)
     {
