@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class WordGame extends AppCompatActivity {
     String[] PLWords = new String[] {"PLANETA", "DELFIN", "FIGURA"};
     String[] ENGWords = new String[] {"FAIRLY", "TRUSTY", "MISFIT"};
@@ -17,7 +19,10 @@ public class WordGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word_game);
         Intent intent = getIntent();
-        Boolean lang = intent.getBooleanExtra("PL_or_ENG",false);;
+        Boolean lang = intent.getBooleanExtra("PL_or_ENG",false);
+        Random rand = new Random();
+        int IntwordPL = rand.nextInt(PLWords.length);
+        TextView text = findViewById(R.id.textViewGenerate);
     }
     public void clickEvent(View v)
     {
