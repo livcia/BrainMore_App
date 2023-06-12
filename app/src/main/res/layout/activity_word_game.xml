@@ -13,11 +13,12 @@
     android:src="@drawable/arrow"
     />
     <TextView
+        android:layout_marginTop="200dp"
         android:id="@+id/textViewGenerate"
         android:fontFamily="sans-serif-condensed"
         android:textSize="40sp"
         android:text=""
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Button
@@ -39,31 +40,37 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content">
             <Button
+                android:id="@+id/letterA"
                 android:text="A"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterB"
                 android:text="B"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterC"
                 android:text="C"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterD"
                 android:text="D"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterE"
                 android:text="E"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterF"
                 android:text="F"
             android:layout_margin="5dp"
             android:layout_width="50dp"
@@ -74,31 +81,37 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content">
             <Button
+                android:id="@+id/letterG"
                 android:text="G"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterH"
                 android:text="H"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterI"
                 android:text="I"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterJ"
                 android:text="J"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterK"
                 android:text="K"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterL"
                 android:text="L"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
@@ -110,31 +123,73 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content">
             <Button
+                android:id="@+id/letterM"
                 android:text="M"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterN"
                 android:text="N"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterO"
                 android:text="O"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterP"
                 android:text="P"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterS"
+                android:text="S"
+                android:layout_margin="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:id="@+id/letterT"
+                android:text="T"
+                android:layout_margin="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/letterU"
+                android:text="U"
+                android:layout_margin="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:id="@+id/letterW"
+                android:text="W"
+                android:layout_margin="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:id="@+id/letterX"
+                android:text="X"
+                android:layout_margin="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:id="@+id/letterY"
                 android:text="Y"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
+                android:id="@+id/letterZ"
                 android:text="Z"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"

@@ -31,6 +31,9 @@ public class WordGame extends AppCompatActivity {
         }
 
     }
+    public void blockbutton(Button btn){
+        btn.setEnabled(false);
+    }
     public void clickEvent(View v)
     {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
