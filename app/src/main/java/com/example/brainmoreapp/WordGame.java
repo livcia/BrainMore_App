@@ -14,6 +14,7 @@ import java.util.Random;
 public class WordGame extends AppCompatActivity {
     String[] PLWords = new String[] {"PLANETA", "DELFIN", "FIGURA"};
     String[] ENGWords = new String[] {"FAIRLY", "TRUSTY", "MISFIT"};
+    Button letterA, letterB, letterC, letterD, letterE, letterF, letterG, letterH, letterI, letterJ, letterK, letterL, letterM, letterN, letterO, letterP, letterR, letterS, letterT, letterU, letterW, letterX, letterY, letterZ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +30,34 @@ public class WordGame extends AppCompatActivity {
         }else{
             drawWord.setText("Losuj slowo");
         }
+        letterA = findViewById(R.id.letterA);
+        letterB = findViewById(R.id.letterB);
+        letterC = findViewById(R.id.letterC);
+        letterD = findViewById(R.id.letterD);
+        letterE = findViewById(R.id.letterE);
+        letterF = findViewById(R.id.letterF);
+        letterG = findViewById(R.id.letterG);
+        letterH = findViewById(R.id.letterH);
+        letterI = findViewById(R.id.letterI);
+        letterJ = findViewById(R.id.letterJ);
+        letterK = findViewById(R.id.letterK);
+        letterL = findViewById(R.id.letterL);
+        letterM = findViewById(R.id.letterM);
+        letterN = findViewById(R.id.letterN);
+        letterO = findViewById(R.id.letterO);
+        letterP = findViewById(R.id.letterP);
+        letterR = findViewById(R.id.letterR);
+        letterS = findViewById(R.id.letterS);
+        letterT = findViewById(R.id.letterT);
+        letterU = findViewById(R.id.letterU);
+        letterW = findViewById(R.id.letterW);
+        letterX = findViewById(R.id.letterX);
+        letterY = findViewById(R.id.letterY);
+        letterZ = findViewById(R.id.letterZ);
 
     }
-    public void blockbutton(Button btn){
-        btn.setEnabled(false);
+    public void blockbutton(Button btn, boolean blockorleave){
+        btn.setEnabled(blockorleave);
     }
     public void clickEvent(View v)
     {

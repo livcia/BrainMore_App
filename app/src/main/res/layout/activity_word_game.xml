@@ -147,14 +147,14 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
-                android:id="@+id/letterS"
-                android:text="S"
+                android:id="@+id/letterR"
+                android:text="R"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <Button
-                android:id="@+id/letterT"
-                android:text="T"
+                android:id="@+id/letterS"
+                android:text="S"
                 android:layout_margin="5dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
@@ -164,6 +164,12 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/letterT"
+                android:text="T"
+                android:layout_margin="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <Button
                 android:id="@+id/letterU"
                 android:text="U"
