@@ -54,9 +54,171 @@ public class WordGame extends AppCompatActivity {
         letterX = findViewById(R.id.letterX);
         letterY = findViewById(R.id.letterY);
         letterZ = findViewById(R.id.letterZ);
+        letterA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterA, false);
+            }
+        });
+        letterB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterB, false);
+            }
+        });
+        letterC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterC, false);
+            }
+        });
+        letterD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterD, false);
+            }
+        });
+        letterE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterE, false);
+            }
+        });
+        letterF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterF, false);
+            }
+        });
+
+        letterG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterG, false);
+            }
+        });
+
+        letterH.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterH, false);
+            }
+        });
+
+        letterI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterI, false);
+            }
+        });
+
+        letterJ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterJ, false);
+            }
+        });
+
+        letterK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterK, false);
+            }
+        });
+
+        letterL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterL, false);
+            }
+        });
+
+        letterM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterM, false);
+            }
+        });
+
+        letterN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterN, false);
+            }
+        });
+
+        letterO.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterO, false);
+            }
+        });
+
+        letterP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterP, false);
+            }
+        });
+
+        letterR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterR, false);
+            }
+        });
+
+        letterS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterS, false);
+            }
+        });
+
+        letterT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterT, false);
+            }
+        });
+
+        letterU.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterU, false);
+            }
+        });
+
+        letterW.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterW, false);
+            }
+        });
+
+        letterX.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterX, false);
+            }
+        });
+
+        letterY.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterY, false);
+            }
+        });
+
+        letterZ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blockButton(letterZ, false);
+            }
+        });
 
     }
-    public void blockbutton(Button btn, boolean blockorleave){
+    public void blockButton(Button btn, boolean blockorleave){
         btn.setEnabled(blockorleave);
     }
     public void clickEvent(View v)
@@ -64,4 +226,4 @@ public class WordGame extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
-}
+    }
