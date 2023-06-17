@@ -14,7 +14,7 @@ import java.util.Random;
 public class WordGame extends AppCompatActivity {
     String[] PLWords = new String[] {"PLANETA", "DELFIN", "FIGURA"};
     String[] ENGWords = new String[] {"FAIRLY", "TRUSTY", "MISFIT"};
-    Button letterA, letterB, letterC, letterD, letterE, letterF, letterG, letterH, letterI, letterJ, letterK, letterL, letterM, letterN, letterO, letterP, letterR, letterS, letterT, letterU, letterW, letterX, letterY, letterZ;
+    Button drawWord, letterA, letterB, letterC, letterD, letterE, letterF, letterG, letterH, letterI, letterJ, letterK, letterL, letterM, letterN, letterO, letterP, letterR, letterS, letterT, letterU, letterW, letterX, letterY, letterZ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,7 @@ public class WordGame extends AppCompatActivity {
         }else{
             drawWord.setText("Losuj slowo");
         }
+        drawWord = findViewById(R.id.drawWord);
         letterA = findViewById(R.id.letterA);
         letterB = findViewById(R.id.letterB);
         letterC = findViewById(R.id.letterC);
@@ -54,6 +55,35 @@ public class WordGame extends AppCompatActivity {
         letterX = findViewById(R.id.letterX);
         letterY = findViewById(R.id.letterY);
         letterZ = findViewById(R.id.letterZ);
+        drawWord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                blockButton(letterA, true);
+                blockButton(letterB, true);
+                blockButton(letterC, true);
+                blockButton(letterD, true);
+                blockButton(letterE, true);
+                blockButton(letterF, true);
+                blockButton(letterG, true);
+                blockButton(letterH, true);
+                blockButton(letterI, true);
+                blockButton(letterJ, true);
+                blockButton(letterK, true);
+                blockButton(letterL, true);
+                blockButton(letterM, true);
+                blockButton(letterN, true);
+                blockButton(letterO, true);
+                blockButton(letterP, true);
+                blockButton(letterR, true);
+                blockButton(letterS, true);
+                blockButton(letterT, true);
+                blockButton(letterU, true);
+                blockButton(letterW, true);
+                blockButton(letterX, true);
+                blockButton(letterY, true);
+                blockButton(letterZ, true);
+            }
+        });
         letterA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
