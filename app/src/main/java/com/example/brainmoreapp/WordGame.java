@@ -9,25 +9,28 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.nio.charset.Charset;
 import java.util.Random;
 
 public class WordGame extends AppCompatActivity {
-    String[] PLWords = new String[] {"PLANETA", "DELFIN", "FIGURA"};
-    String[] ENGWords = new String[] {"FAIRLY", "TRUSTY", "MISFIT"};
+    Random rand;
+    String[] PLWords = new String[]{"PLANETA", "DELFIN", "FIGURA"};
+    String[] ENGWords = new String[]{"FAIRLY", "TRUSTY", "MISFIT"};
     Button drawWord, letterA, letterB, letterC, letterD, letterE, letterF, letterG, letterH, letterI, letterJ, letterK, letterL, letterM, letterN, letterO, letterP, letterR, letterS, letterT, letterU, letterW, letterX, letterY, letterZ;
+    int IntwordPL;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word_game);
         Intent intent = getIntent();
-        Boolean lang = intent.getBooleanExtra("PL_or_ENG",false);
-        Random rand = new Random();
-        int IntwordPL = rand.nextInt(PLWords.length);
-        TextView text = findViewById(R.id.textViewGenerate);
+        Boolean lang = intent.getBooleanExtra("PL_or_ENG", false);
+        rand = new Random();
+        IntwordPL = rand.nextInt(PLWords.length);
         Button drawWord = findViewById(R.id.drawWord);
-        if(lang){
+        if (lang) {
             drawWord.setText("Draw word");
-        }else{
+        } else {
             drawWord.setText("Losuj slowo");
         }
         drawWord = findViewById(R.id.drawWord);
@@ -246,14 +249,37 @@ public class WordGame extends AppCompatActivity {
                 blockButton(letterZ, false);
             }
         });
-
+        drawWord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rand = new Random();
+                IntwordPL = rand.nextInt(PLWords.length);
+            }
+        });
     }
-    public void blockButton(Button btn, boolean blockorleave){
+
+    public void blockButton(Button btn, boolean blockorleave) {
         btn.setEnabled(blockorleave);
     }
-    public void clickEvent(View v)
-    {
+
+    public Boolean ifLetter(CharSequence letter, Boolean lang) {
+        if (lang) {
+            if (PLWords[IntwordPL].contains(letter)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            if (ENGWords[IntwordPL].contains(letter)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public void clickEvent(View v) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
-    }
+}
