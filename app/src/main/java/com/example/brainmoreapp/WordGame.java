@@ -17,7 +17,7 @@ public class WordGame extends AppCompatActivity {
     String[] PLWords = new String[]{"PLANETA", "DELFIN", "FIGURA"};
     String[] ENGWords = new String[]{"FAIRLY", "TRUSTY", "MISFIT"};
     Button drawWord, letterA, letterB, letterC, letterD, letterE, letterF, letterG, letterH, letterI, letterJ, letterK, letterL, letterM, letterN, letterO, letterP, letterR, letterS, letterT, letterU, letterW, letterX, letterY, letterZ;
-    int IntwordPL;
+    int IntwordPL, index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +91,9 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterA, false);
+                if (ifLetter("A",lang)){
+
+                }
             }
         });
         letterB.setOnClickListener(new View.OnClickListener() {
@@ -277,7 +280,13 @@ public class WordGame extends AppCompatActivity {
             }
         }
     }
-
+    public void showletters(String letter){
+        index = PLWords[IntwordPL].indexOf(letter);
+        while(index >= 0){
+            System.out.println(""+index);
+            index = PLWords[IntwordPL].indexOf(letter, index+1);
+        }
+    }
     public void clickEvent(View v) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
