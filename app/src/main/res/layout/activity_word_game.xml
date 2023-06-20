@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
     <TextView
+        android:id="@+id/letter1"
         android:padding="10dp"
         android:layout_marginTop="200dp"
         android:fontFamily="sans-serif-condensed"
@@ -26,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
         <TextView
+            android:id="@+id/letter2"
             android:padding="10dp"
             android:layout_marginTop="200dp"
             android:fontFamily="sans-serif-condensed"
@@ -34,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
+            android:id="@+id/letter3"
             android:padding="10dp"
             android:layout_marginTop="200dp"
             android:fontFamily="sans-serif-condensed"
@@ -42,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
+            android:id="@+id/letter4"
             android:padding="10dp"
             android:layout_marginTop="200dp"
             android:fontFamily="sans-serif-condensed"
@@ -50,6 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
+            android:id="@+id/letter5"
             android:padding="10dp"
             android:layout_marginTop="200dp"
             android:fontFamily="sans-serif-condensed"
@@ -58,6 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
+            android:id="@+id/letter6"
             android:padding="10dp"
             android:layout_marginTop="200dp"
             android:fontFamily="sans-serif-condensed"
