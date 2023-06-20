@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class WordGame extends AppCompatActivity {
     Random rand;
-    String[] PLWords = new String[]{"PLANETA", "DELFIN", "FIGURA"};
+    String[] PLWords = new String[]{"DELFIN", "FIGURA"};
     String[] ENGWords = new String[]{"FAIRLY", "TRUSTY", "MISFIT"};
     TextView[] Letters;
     Button drawWord, letterA, letterB, letterC, letterD, letterE, letterF, letterG, letterH, letterI, letterJ, letterK, letterL, letterM, letterN, letterO, letterP, letterR, letterS, letterT, letterU, letterW, letterX, letterY, letterZ;
@@ -67,35 +67,6 @@ public class WordGame extends AppCompatActivity {
         letterX = findViewById(R.id.letterX);
         letterY = findViewById(R.id.letterY);
         letterZ = findViewById(R.id.letterZ);
-        drawWord.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                blockButton(letterA, true);
-                blockButton(letterB, true);
-                blockButton(letterC, true);
-                blockButton(letterD, true);
-                blockButton(letterE, true);
-                blockButton(letterF, true);
-                blockButton(letterG, true);
-                blockButton(letterH, true);
-                blockButton(letterI, true);
-                blockButton(letterJ, true);
-                blockButton(letterK, true);
-                blockButton(letterL, true);
-                blockButton(letterM, true);
-                blockButton(letterN, true);
-                blockButton(letterO, true);
-                blockButton(letterP, true);
-                blockButton(letterR, true);
-                blockButton(letterS, true);
-                blockButton(letterT, true);
-                blockButton(letterU, true);
-                blockButton(letterW, true);
-                blockButton(letterX, true);
-                blockButton(letterY, true);
-                blockButton(letterZ, true);
-            }
-        });
         letterA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -335,6 +306,35 @@ public class WordGame extends AppCompatActivity {
             public void onClick(View view) {
                 rand = new Random();
                 IntwordPL = rand.nextInt(PLWords.length);
+                blockButton(letterA, true);
+                blockButton(letterB, true);
+                blockButton(letterC, true);
+                blockButton(letterD, true);
+                blockButton(letterE, true);
+                blockButton(letterF, true);
+                blockButton(letterG, true);
+                blockButton(letterH, true);
+                blockButton(letterI, true);
+                blockButton(letterJ, true);
+                blockButton(letterK, true);
+                blockButton(letterL, true);
+                blockButton(letterM, true);
+                blockButton(letterN, true);
+                blockButton(letterO, true);
+                blockButton(letterP, true);
+                blockButton(letterR, true);
+                blockButton(letterS, true);
+                blockButton(letterT, true);
+                blockButton(letterU, true);
+                blockButton(letterW, true);
+                blockButton(letterX, true);
+                blockButton(letterY, true);
+                blockButton(letterZ, true);
+                Integer index = 0;
+                while(index < Letters.length){
+                    Letters[index].setText("_");
+                    index += 1;
+                }
             }
         });
     }
