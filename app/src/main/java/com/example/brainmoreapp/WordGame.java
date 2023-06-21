@@ -14,8 +14,26 @@ import java.util.Random;
 
 public class WordGame extends AppCompatActivity {
     Random rand;
-    String[] PLWords = new String[]{"CHEMIA","DELFIN", "FIGURA", "LOSOWE", "ABSURD","AFRYKA","BABCIA","AMELIA","ANONIM","ARBUZY","ARABKI","ARKUSZ","ARONIA","AROMAT"};
-    String[] ENGWords = new String[]{"TRUSTY", "MISFIT"};
+    String[] PLWords = new String[] {
+            "CHEMIA",
+            "DELFIN",
+            "FIGURA",
+            "LOSOWE",
+            "ABSURD",
+            "AFRYKA",
+            "BABCIA",
+            "AMELIA",
+            "ANONIM",
+            "ARBUZY",
+            "ARABKI",
+            "ARKUSZ",
+            "ARONIA",
+            "AROMAT"
+    };
+    String[] ENGWords = new String[] {
+            "TRUSTY",
+            "MISFIT"
+    };
     TextView[] Letters;
     Button drawWord, letterA, letterB, letterC, letterD, letterE, letterF, letterG, letterH, letterI, letterJ, letterK, letterL, letterM, letterN, letterO, letterP, letterR, letterS, letterT, letterU, letterW, letterX, letterY, letterZ;
     int IntwordPL, index;
@@ -44,7 +62,14 @@ public class WordGame extends AppCompatActivity {
         l4 = findViewById(R.id.letter4);
         l5 = findViewById(R.id.letter5);
         l6 = findViewById(R.id.letter6);
-        Letters = new TextView[]{l1, l2, l3, l4, l5, l6};
+        Letters = new TextView[] {
+                l1,
+                l2,
+                l3,
+                l4,
+                l5,
+                l6
+        };
         drawWord = findViewById(R.id.drawWord);
         letterA = findViewById(R.id.letterA);
         letterB = findViewById(R.id.letterB);
@@ -74,12 +99,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterA, false);
-                if(lang){
-                    if(ifLetterENG("A")){
+                if (lang) {
+                    if (ifLetterENG("A")) {
                         checkindexofletter("A", lang);
                     }
-                }else{
-                    if(ifLetterPL("A")){
+                } else {
+                    if (ifLetterPL("A")) {
                         checkindexofletter("A", lang);
                     }
                 }
@@ -89,12 +114,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterB, false);
-                if(lang){
-                    if(ifLetterENG("B")){
+                if (lang) {
+                    if (ifLetterENG("B")) {
                         checkindexofletter("B", lang);
                     }
-                }else{
-                    if(ifLetterPL("B")){
+                } else {
+                    if (ifLetterPL("B")) {
                         checkindexofletter("B", lang);
                     }
                 }
@@ -104,12 +129,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterC, false);
-                if(lang){
-                    if(ifLetterENG("C")){
+                if (lang) {
+                    if (ifLetterENG("C")) {
                         checkindexofletter("C", lang);
                     }
-                }else{
-                    if(ifLetterPL("C")){
+                } else {
+                    if (ifLetterPL("C")) {
                         checkindexofletter("C", lang);
                     }
                 }
@@ -119,12 +144,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterD, false);
-                if(lang){
-                    if(ifLetterENG("D")){
+                if (lang) {
+                    if (ifLetterENG("D")) {
                         checkindexofletter("D", lang);
                     }
-                }else{
-                    if(ifLetterPL("D")){
+                } else {
+                    if (ifLetterPL("D")) {
                         checkindexofletter("D", lang);
                     }
                 }
@@ -134,12 +159,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterE, false);
-                if(lang){
-                    if(ifLetterENG("E")){
+                if (lang) {
+                    if (ifLetterENG("E")) {
                         checkindexofletter("E", lang);
                     }
-                }else{
-                    if(ifLetterPL("E")){
+                } else {
+                    if (ifLetterPL("E")) {
                         checkindexofletter("E", lang);
                     }
                 }
@@ -149,12 +174,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterF, false);
-                if(lang){
-                    if(ifLetterENG("F")){
+                if (lang) {
+                    if (ifLetterENG("F")) {
                         checkindexofletter("F", lang);
                     }
-                }else{
-                    if(ifLetterPL("F")){
+                } else {
+                    if (ifLetterPL("F")) {
                         checkindexofletter("F", lang);
                     }
                 }
@@ -165,12 +190,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterG, false);
-                if(lang){
-                    if(ifLetterENG("G")){
+                if (lang) {
+                    if (ifLetterENG("G")) {
                         checkindexofletter("G", lang);
                     }
-                }else{
-                    if(ifLetterPL("G")){
+                } else {
+                    if (ifLetterPL("G")) {
                         checkindexofletter("G", lang);
                     }
                 }
@@ -181,12 +206,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterH, false);
-                if(lang){
-                    if(ifLetterENG("H")){
+                if (lang) {
+                    if (ifLetterENG("H")) {
                         checkindexofletter("H", lang);
                     }
-                }else{
-                    if(ifLetterPL("H")){
+                } else {
+                    if (ifLetterPL("H")) {
                         checkindexofletter("H", lang);
                     }
                 }
@@ -197,12 +222,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterI, false);
-                if(lang){
-                    if(ifLetterENG("I")){
+                if (lang) {
+                    if (ifLetterENG("I")) {
                         checkindexofletter("I", lang);
                     }
-                }else{
-                    if(ifLetterPL("I")){
+                } else {
+                    if (ifLetterPL("I")) {
                         checkindexofletter("I", lang);
                     }
                 }
@@ -213,12 +238,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterJ, false);
-                if(lang){
-                    if(ifLetterENG("J")){
+                if (lang) {
+                    if (ifLetterENG("J")) {
                         checkindexofletter("J", lang);
                     }
-                }else{
-                    if(ifLetterPL("J")){
+                } else {
+                    if (ifLetterPL("J")) {
                         checkindexofletter("J", lang);
                     }
                 }
@@ -229,12 +254,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterK, false);
-                if(lang){
-                    if(ifLetterENG("K")){
+                if (lang) {
+                    if (ifLetterENG("K")) {
                         checkindexofletter("K", lang);
                     }
-                }else{
-                    if(ifLetterPL("K")){
+                } else {
+                    if (ifLetterPL("K")) {
                         checkindexofletter("K", lang);
                     }
                 }
@@ -245,12 +270,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterL, false);
-                if(lang){
-                    if(ifLetterENG("L")){
+                if (lang) {
+                    if (ifLetterENG("L")) {
                         checkindexofletter("L", lang);
                     }
-                }else{
-                    if(ifLetterPL("L")){
+                } else {
+                    if (ifLetterPL("L")) {
                         checkindexofletter("L", lang);
                     }
                 }
@@ -261,12 +286,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterM, false);
-                if(lang){
-                    if(ifLetterENG("M")){
+                if (lang) {
+                    if (ifLetterENG("M")) {
                         checkindexofletter("M", lang);
                     }
-                }else{
-                    if(ifLetterPL("M")){
+                } else {
+                    if (ifLetterPL("M")) {
                         checkindexofletter("M", lang);
                     }
                 }
@@ -277,12 +302,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterN, false);
-                if(lang){
-                    if(ifLetterENG("N")){
+                if (lang) {
+                    if (ifLetterENG("N")) {
                         checkindexofletter("N", lang);
                     }
-                }else{
-                    if(ifLetterPL("N")){
+                } else {
+                    if (ifLetterPL("N")) {
                         checkindexofletter("N", lang);
                     }
                 }
@@ -293,12 +318,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterO, false);
-                if(lang){
-                    if(ifLetterENG("O")){
+                if (lang) {
+                    if (ifLetterENG("O")) {
                         checkindexofletter("O", lang);
                     }
-                }else{
-                    if(ifLetterPL("O")){
+                } else {
+                    if (ifLetterPL("O")) {
                         checkindexofletter("O", lang);
                     }
                 }
@@ -309,12 +334,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterP, false);
-                if(lang){
-                    if(ifLetterENG("P")){
+                if (lang) {
+                    if (ifLetterENG("P")) {
                         checkindexofletter("P", lang);
                     }
-                }else{
-                    if(ifLetterPL("P")){
+                } else {
+                    if (ifLetterPL("P")) {
                         checkindexofletter("P", lang);
                     }
                 }
@@ -325,12 +350,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterR, false);
-                if(lang){
-                    if(ifLetterENG("R")){
+                if (lang) {
+                    if (ifLetterENG("R")) {
                         checkindexofletter("R", lang);
                     }
-                }else{
-                    if(ifLetterPL("R")){
+                } else {
+                    if (ifLetterPL("R")) {
                         checkindexofletter("R", lang);
                     }
                 }
@@ -341,12 +366,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterS, false);
-                if(lang){
-                    if(ifLetterENG("S")){
+                if (lang) {
+                    if (ifLetterENG("S")) {
                         checkindexofletter("S", lang);
                     }
-                }else{
-                    if(ifLetterPL("S")){
+                } else {
+                    if (ifLetterPL("S")) {
                         checkindexofletter("S", lang);
                     }
                 }
@@ -357,12 +382,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterT, false);
-                if(lang){
-                    if(ifLetterENG("T")){
+                if (lang) {
+                    if (ifLetterENG("T")) {
                         checkindexofletter("T", lang);
                     }
-                }else{
-                    if(ifLetterPL("T")){
+                } else {
+                    if (ifLetterPL("T")) {
                         checkindexofletter("T", lang);
                     }
                 }
@@ -373,12 +398,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterU, false);
-                if(lang){
-                    if(ifLetterENG("U")){
+                if (lang) {
+                    if (ifLetterENG("U")) {
                         checkindexofletter("U", lang);
                     }
-                }else{
-                    if(ifLetterPL("U")){
+                } else {
+                    if (ifLetterPL("U")) {
                         checkindexofletter("U", lang);
                     }
                 }
@@ -389,12 +414,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterW, false);
-                if(lang){
-                    if(ifLetterENG("W")){
+                if (lang) {
+                    if (ifLetterENG("W")) {
                         checkindexofletter("W", lang);
                     }
-                }else{
-                    if(ifLetterPL("W")){
+                } else {
+                    if (ifLetterPL("W")) {
                         checkindexofletter("W", lang);
                     }
                 }
@@ -405,12 +430,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterX, false);
-                if(lang){
-                    if(ifLetterENG("X")){
+                if (lang) {
+                    if (ifLetterENG("X")) {
                         checkindexofletter("X", lang);
                     }
-                }else{
-                    if(ifLetterPL("X")){
+                } else {
+                    if (ifLetterPL("X")) {
                         checkindexofletter("X", lang);
                     }
                 }
@@ -421,12 +446,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterY, false);
-                if(lang){
-                    if(ifLetterENG("Y")){
+                if (lang) {
+                    if (ifLetterENG("Y")) {
                         checkindexofletter("Y", lang);
                     }
-                }else{
-                    if(ifLetterPL("Y")){
+                } else {
+                    if (ifLetterPL("Y")) {
                         checkindexofletter("Y", lang);
                     }
                 }
@@ -437,12 +462,12 @@ public class WordGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blockButton(letterZ, false);
-                if(lang){
-                    if(ifLetterENG("Z")){
+                if (lang) {
+                    if (ifLetterENG("Z")) {
                         checkindexofletter("Z", lang);
                     }
-                }else{
-                    if(ifLetterPL("Z")){
+                } else {
+                    if (ifLetterPL("Z")) {
                         checkindexofletter("Z", lang);
                     }
                 }
@@ -478,7 +503,7 @@ public class WordGame extends AppCompatActivity {
                 blockButton(letterY, true);
                 blockButton(letterZ, true);
                 Integer index = 0;
-                while(index < Letters.length){
+                while (index < Letters.length) {
                     Letters[index].setText("_");
                     index += 1;
                 }
@@ -491,13 +516,13 @@ public class WordGame extends AppCompatActivity {
     }
 
     public Boolean ifLetterENG(CharSequence letter) {
-            String ltr = ENGWords[IntwordPL];
-            if (ltr.contains(letter)) {
-                return true;
-            } else {
-                return false;
-            }
+        String ltr = ENGWords[IntwordPL];
+        if (ltr.contains(letter)) {
+            return true;
+        } else {
+            return false;
         }
+    }
     public Boolean ifLetterPL(CharSequence letter) {
         String ltr = PLWords[IntwordPL];
         if (ltr.contains(letter)) {
@@ -506,7 +531,7 @@ public class WordGame extends AppCompatActivity {
             return false;
         }
     }
-    public void showletter(Integer index, String letter){
+    public void showletter(Integer index, String letter) {
         Letters[index].setText(letter);
     }
     public void checkindexofletter(String letter, Boolean lang) {
