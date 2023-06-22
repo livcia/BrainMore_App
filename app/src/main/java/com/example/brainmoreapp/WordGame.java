@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.nio.charset.Charset;
 import java.util.Random;
@@ -526,21 +527,41 @@ public class WordGame extends AppCompatActivity {
             index = PLWords[IntwordPL].indexOf(letter);
             while (index >= 0) {
                 showletter(index, letter);
+                ToastFull();
                 index = PLWords[IntwordPL].indexOf(letter, index + 1);
             }
         } else {
             index = ENGWords[IntwordPL].indexOf(letter);
             while (index >= 0) {
                 showletter(index, letter);
+                ToastFull();
                 index = ENGWords[IntwordPL].indexOf(letter, index + 1);
             }
+        }
+    }
+    public void ToastFull(){
+        if(checkButtons(btnletters)){
+            for (int i = 0; i< btnletters.length; i++){
+                blockButton(btnletters[i], false);
+            }
+            if(lang){
+                Toast.makeText(getApplicationContext(),"CONGRATULATIONS! You managed to guess all the letters. Now press the draw word button to continue.",Toast.LENGTH_SHORT);
+            }else{
+
+                Toast.makeText(getApplicationContext(),"GRATULACJE! Udało ci się odgadnąć wszystkie litery, wcisnij teraz przycisk losuj slowo aby kontynuowac", Toast.LENGTH_SHORT);
+        }
         }
     }
     public void clickEvent(View v) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
-    public void ifall(){
-
+    public boolean checkButtons(Button[] buttons) {
+        for (Button button : buttons) {
+            if (button.getText().toString().contains("_")) {
+                return true;
+            }
+        }
+        return false;
     }
 }
