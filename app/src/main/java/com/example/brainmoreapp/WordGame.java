@@ -548,11 +548,13 @@ public class WordGame extends AppCompatActivity {
         startActivity(intent);
     }
     public boolean checkTextView() {
-        for (TextView letter : Letters) {
-            if (letter.toString().contains("_")) {
+        for (int i = 0; i< Letters.length; i++){
+           if (Letters[i].getText().toString().equals("_")){
                 return false;
             }
         }
+        for (int i = 0; i< btnletters.length; i++){
+            blockButton(btnletters[i], false);}
         return true;
     }
 }
