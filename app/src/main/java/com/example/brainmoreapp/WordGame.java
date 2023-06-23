@@ -527,41 +527,32 @@ public class WordGame extends AppCompatActivity {
             index = PLWords[IntwordPL].indexOf(letter);
             while (index >= 0) {
                 showletter(index, letter);
-                ToastFull();
+                if(checkTextView()){
+                    Toast.makeText(getApplicationContext(), "gratulacje", Toast.LENGTH_SHORT).show();
+                }
                 index = PLWords[IntwordPL].indexOf(letter, index + 1);
             }
         } else {
             index = ENGWords[IntwordPL].indexOf(letter);
             while (index >= 0) {
                 showletter(index, letter);
-                ToastFull();
+                if(checkTextView()){
+                    Toast.makeText(getApplicationContext(), "gratulacje", Toast.LENGTH_SHORT).show();
+                }
                 index = ENGWords[IntwordPL].indexOf(letter, index + 1);
             }
-        }
-    }
-    public void ToastFull(){
-        if(checkButtons(btnletters)){
-            for (int i = 0; i< btnletters.length; i++){
-                blockButton(btnletters[i], false);
-            }
-            if(lang){
-                Toast.makeText(getApplicationContext(),"CONGRATULATIONS! You managed to guess all the letters. Now press the draw word button to continue.",Toast.LENGTH_SHORT);
-            }else{
-
-                Toast.makeText(getApplicationContext(),"GRATULACJE! Udało ci się odgadnąć wszystkie litery, wcisnij teraz przycisk losuj slowo aby kontynuowac", Toast.LENGTH_SHORT);
-        }
         }
     }
     public void clickEvent(View v) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
-    public boolean checkButtons(Button[] buttons) {
-        for (Button button : buttons) {
-            if (button.getText().toString().contains("_")) {
-                return true;
+    public boolean checkTextView() {
+        for (TextView letter : Letters) {
+            if (letter.toString().contains("_")) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 }
