@@ -37,9 +37,9 @@ public class WordGame extends AppCompatActivity {
     };
     TextView[] Letters;
     Button drawWord, letterA, letterB, letterC, letterD, letterE, letterF, letterG, letterH, letterI, letterJ, letterK, letterL, letterM, letterN, letterO, letterP, letterR, letterS, letterT, letterU, letterW, letterX, letterY, letterZ;
-    int IntwordPL, index;
+    int IntwordPL, index, mistakes;
     Boolean lang;
-    TextView l1, l2, l3, l4, l5, l6;
+    TextView l1, l2, l3, l4, l5, l6, WordScore, WordMistake, Numberormistakes;
     Button[] btnletters;
 
     @Override
@@ -51,13 +51,21 @@ public class WordGame extends AppCompatActivity {
         rand = new Random();
         IntwordPL = rand.nextInt(PLWords.length);
         drawWord = findViewById(R.id.drawWord);
+        WordScore = findViewById(R.id.scoreorpkt);
+        WordMistake = findViewById(R.id.mistakesorblad);
+        Numberormistakes = findViewById(R.id.numberormistakes);
         if (lang) {
             drawWord.setText("Draw word");
+            WordScore.setText("SCORE: ");
+            WordMistake.setText("MISTAKES: ");
             IntwordPL = rand.nextInt(ENGWords.length);
         } else {
             drawWord.setText("Losuj slowo");
+            WordScore.setText("PKT: ");
+            WordMistake.setText("BLEDY: ");
             IntwordPL = rand.nextInt(PLWords.length);
         }
+        mistakes = 0;
         l1 = findViewById(R.id.letter1);
         l2 = findViewById(R.id.letter2);
         l3 = findViewById(R.id.letter3);
@@ -508,6 +516,8 @@ public class WordGame extends AppCompatActivity {
         if (ltr.contains(letter)) {
             return true;
         } else {
+            mistakes += 1;
+            Numberormistakes.setText(""+mistakes);
             return false;
         }
     }
@@ -516,6 +526,8 @@ public class WordGame extends AppCompatActivity {
         if (ltr.contains(letter)) {
             return true;
         } else {
+            mistakes += 1;
+            Numberormistakes.setText(""+mistakes);
             return false;
         }
     }
@@ -537,7 +549,7 @@ public class WordGame extends AppCompatActivity {
             while (index >= 0) {
                 showletter(index, letter);
                 if(checkTextView()){
-                    Toast.makeText(getApplicationContext(), "gratulacje", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "CONGRATULATIONS", Toast.LENGTH_SHORT).show();
                 }
                 index = ENGWords[IntwordPL].indexOf(letter, index + 1);
             }

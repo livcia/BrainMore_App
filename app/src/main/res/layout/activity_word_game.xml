@@ -6,12 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".WordGame"
     android:background="@drawable/background">
-<ImageView
-    android:onClick="clickEvent"
-    android:layout_width="70dp"
-    android:layout_height="70dp"
-    android:src="@drawable/arrow"
-    />
+
+        <ImageView
+            android:onClick="clickEvent"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/arrow"
+            />
+    <LinearLayout
+        android:id="@+id/score"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="30dp">
+        <TextView
+            android:id="@+id/scoreorpkt"
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="0"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/score"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="30dp">
+        <TextView
+            android:id="@+id/mistakesorblad"
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mistakes: "/>
+        <TextView
+            android:id="@+id/numberormistakes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="0"/>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
