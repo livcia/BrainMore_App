@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class WordGame extends AppCompatActivity {
@@ -43,15 +45,16 @@ public class WordGame extends AppCompatActivity {
     TextView l1, l2, l3, l4, l5, l6, WordScore, WordMistake, Numberormistakes, Numberofscore;
     Button[] btnletters;
     SharedPreferences.Editor editor;
-
+    ArrayList<Integer> arrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word_game);
         Intent intent = getIntent();
         lang = intent.getBooleanExtra("PL_or_ENG", false);
         rand = new Random();
-        IntwordPL = rand.nextInt(PLWords.length);
         drawWord = findViewById(R.id.drawWord);
         WordScore = findViewById(R.id.scoreorpkt);
         WordMistake = findViewById(R.id.mistakesorblad);
@@ -65,11 +68,15 @@ public class WordGame extends AppCompatActivity {
             WordScore.setText("SCORE: ");
             WordMistake.setText("MISTAKES: ");
             IntwordPL = rand.nextInt(ENGWords.length);
+            Integer arr[] = {IntwordPL};
+            arrayList = new ArrayList<Integer>(Arrays.asList(arr));
         } else {
             drawWord.setText("Losuj slowo");
             WordScore.setText("PKT: ");
             WordMistake.setText("BLEDY: ");
             IntwordPL = rand.nextInt(PLWords.length);
+            Integer arr[] = {IntwordPL};
+            arrayList = new ArrayList<Integer>(Arrays.asList(arr));
         }
         mistakes = 0;
         l1 = findViewById(R.id.letter1);
@@ -503,6 +510,7 @@ public class WordGame extends AppCompatActivity {
                 }else{
                     IntwordPL = rand.nextInt(PLWords.length);
                 }
+                arrayList.add(IntwordPL);
                 for (int i = 0; i< btnletters.length; i++){
                     blockButton(btnletters[i], true);
                 }
@@ -548,7 +556,7 @@ public class WordGame extends AppCompatActivity {
             while (index >= 0) {
                 showletter(index, letter);
                 if(checkTextView()){
-                    scorepoints += scorepoints + 100 - (mistakes*10);
+                    scorepoints = scorepoints + 100 - (mistakes*10);
                     if(scorepoints < 0){
                         scorepoints = 0;
                     }
@@ -566,7 +574,7 @@ public class WordGame extends AppCompatActivity {
             while (index >= 0) {
                 showletter(index, letter);
                 if(checkTextView()){
-                    scorepoints += scorepoints + 100 - (mistakes*10);
+                    scorepoints = scorepoints + 100 - (mistakes*10);
                     if(scorepoints < 0){
                         scorepoints = 0;
                     }
