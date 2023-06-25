@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".WordGame"
     android:background="@drawable/background">
-
-        <ImageView
+    <ImageView
             android:onClick="clickEvent"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@drawable/arrow"
-            />
+    />
     <LinearLayout
         android:id="@+id/score"
         android:layout_alignParentEnd="true"

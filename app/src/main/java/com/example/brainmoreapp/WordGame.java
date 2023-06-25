@@ -3,6 +3,7 @@ package com.example.brainmoreapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +42,7 @@ public class WordGame extends AppCompatActivity {
     Boolean lang;
     TextView l1, l2, l3, l4, l5, l6, WordScore, WordMistake, Numberormistakes, Numberofscore;
     Button[] btnletters;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,9 @@ public class WordGame extends AppCompatActivity {
         WordMistake = findViewById(R.id.mistakesorblad);
         Numberormistakes = findViewById(R.id.numberormistakes);
         Numberofscore = findViewById(R.id.numberofscore);
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        scorepoints = prefs.getInt("score", 0);
+        Numberofscore.setText(""+scorepoints);
         if (lang) {
             drawWord.setText("Draw word");
             WordScore.setText("SCORE: ");
@@ -67,7 +72,6 @@ public class WordGame extends AppCompatActivity {
             IntwordPL = rand.nextInt(PLWords.length);
         }
         mistakes = 0;
-        scorepoints = 0;
         l1 = findViewById(R.id.letter1);
         l2 = findViewById(R.id.letter2);
         l3 = findViewById(R.id.letter3);
@@ -544,8 +548,15 @@ public class WordGame extends AppCompatActivity {
             while (index >= 0) {
                 showletter(index, letter);
                 if(checkTextView()){
-                    scorepoints += scorepoints + 100 - (mistakes * 10);
+                    scorepoints += scorepoints + 100 - (mistakes*10);
+                    if(scorepoints < 0){
+                        scorepoints = 0;
+                    }
+                    mistakes = 0;
                     Numberofscore.setText(""+scorepoints);
+                    editor = getSharedPreferences("prefs", MODE_PRIVATE).edit();
+                    editor.putInt("score", scorepoints);
+                    editor.apply();
                     Toast.makeText(getApplicationContext(), "gratulacje", Toast.LENGTH_SHORT).show();
                 }
                 index = PLWords[IntwordPL].indexOf(letter, index + 1);
@@ -555,8 +566,15 @@ public class WordGame extends AppCompatActivity {
             while (index >= 0) {
                 showletter(index, letter);
                 if(checkTextView()){
-                    scorepoints += scorepoints + 100 - (mistakes * 10);
+                    scorepoints += scorepoints + 100 - (mistakes*10);
+                    if(scorepoints < 0){
+                        scorepoints = 0;
+                    }
+                    mistakes = 0;
                     Numberofscore.setText(""+scorepoints);
+                    editor = getSharedPreferences("prefs", MODE_PRIVATE).edit();
+                    editor.putInt("score", scorepoints);
+                    editor.apply();
                     Toast.makeText(getApplicationContext(), "CONGRATULATIONS", Toast.LENGTH_SHORT).show();
                 }
                 index = ENGWords[IntwordPL].indexOf(letter, index + 1);
