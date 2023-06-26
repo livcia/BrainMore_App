@@ -504,10 +504,12 @@ public class WordGame extends AppCompatActivity {
                 Numberormistakes.setText(""+mistakes);
                 rand = new Random();
                 if(lang){
-                    ENGWords = removeElements(ENGWords, ENGWords[IntwordPL]);
+                    //ENGWords = removeElements(ENGWords, ENGWords[IntwordPL]);
+                    System.arraycopy(ENGWords, IntwordPL + 1, ENGWords, IntwordPL, ENGWords.length - 1 - IntwordPL);
                     IntwordPL = rand.nextInt(ENGWords.length);
                 }else{
-                    PLWords = removeElements(PLWords, PLWords[IntwordPL]);
+                    //PLWords = removeElements(PLWords, PLWords[IntwordPL]);
+                    System.arraycopy(PLWords, IntwordPL + 1, PLWords, IntwordPL, PLWords.length - 1 - IntwordPL);
                     IntwordPL = rand.nextInt(PLWords.length);
                 }
                 for (int i = 0; i< btnletters.length; i++){
