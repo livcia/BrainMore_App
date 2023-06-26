@@ -11,9 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 public class WordGame extends AppCompatActivity {
@@ -45,7 +48,6 @@ public class WordGame extends AppCompatActivity {
     TextView l1, l2, l3, l4, l5, l6, WordScore, WordMistake, Numberormistakes, Numberofscore;
     Button[] btnletters;
     SharedPreferences.Editor editor;
-    ArrayList<Integer> arrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -68,15 +70,11 @@ public class WordGame extends AppCompatActivity {
             WordScore.setText("SCORE: ");
             WordMistake.setText("MISTAKES: ");
             IntwordPL = rand.nextInt(ENGWords.length);
-            Integer arr[] = {IntwordPL};
-            arrayList = new ArrayList<Integer>(Arrays.asList(arr));
         } else {
             drawWord.setText("Losuj slowo");
             WordScore.setText("PKT: ");
             WordMistake.setText("BLEDY: ");
             IntwordPL = rand.nextInt(PLWords.length);
-            Integer arr[] = {IntwordPL};
-            arrayList = new ArrayList<Integer>(Arrays.asList(arr));
         }
         mistakes = 0;
         l1 = findViewById(R.id.letter1);
@@ -506,11 +504,12 @@ public class WordGame extends AppCompatActivity {
                 Numberormistakes.setText(""+mistakes);
                 rand = new Random();
                 if(lang){
+                    ENGWords = removeElements(ENGWords, ENGWords[IntwordPL]);
                     IntwordPL = rand.nextInt(ENGWords.length);
                 }else{
+                    PLWords = removeElements(PLWords, PLWords[IntwordPL]);
                     IntwordPL = rand.nextInt(PLWords.length);
                 }
-                arrayList.add(IntwordPL);
                 for (int i = 0; i< btnletters.length; i++){
                     blockButton(btnletters[i], true);
                 }
@@ -603,4 +602,14 @@ public class WordGame extends AppCompatActivity {
             blockButton(btnletters[i], false);}
         return true;
     }
+    public static String[] removeElements(String[] input, String deleteMe) {
+        List result = new LinkedList();
+
+        for(String item : input)
+            if(!deleteMe.equals(item))
+                result.add(item);
+
+        return (String[]) result.toArray(input);
+    }
+
 }
