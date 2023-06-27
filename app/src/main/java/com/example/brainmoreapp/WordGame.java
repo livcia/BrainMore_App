@@ -508,8 +508,10 @@ public class WordGame extends AppCompatActivity {
                 Numberormistakes.setText(""+mistakes);
                 rand = new Random();
                 if(lang){
+                    WordsENG.remove(IntwordPL);
                     IntwordPL = rand.nextInt(WordsENG.size());
                 }else{
+                    WordsPL.remove(IntwordPL);
                     IntwordPL = rand.nextInt(WordsPL.size());
                 }
                 for (int i = 0; i< btnletters.length; i++){
