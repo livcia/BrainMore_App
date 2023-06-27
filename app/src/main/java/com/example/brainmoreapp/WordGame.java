@@ -21,7 +21,8 @@ import java.util.Random;
 
 public class WordGame extends AppCompatActivity {
     Random rand;
-    String[] PLWords = new String[] {
+
+    String[] easy_adding_WordsPL = new String[] {
             "CHEMIA",
             "DELFIN",
             "FIGURA",
@@ -37,10 +38,13 @@ public class WordGame extends AppCompatActivity {
             "ARONIA",
             "AROMAT"
     };
-    String[] ENGWords = new String[] {
+    List<String> WordsPL = new ArrayList<>(Arrays.asList(easy_adding_WordsPL));
+
+    String[] easy_adding_WordsENG = new String[] {
             "TRUSTY",
             "MISFIT"
     };
+    List<String> WordsENG = new ArrayList<>(Arrays.asList(easy_adding_WordsENG));
     TextView[] Letters;
     Button drawWord, letterA, letterB, letterC, letterD, letterE, letterF, letterG, letterH, letterI, letterJ, letterK, letterL, letterM, letterN, letterO, letterP, letterR, letterS, letterT, letterU, letterW, letterX, letterY, letterZ;
     int IntwordPL, index, mistakes, scorepoints;
@@ -69,12 +73,12 @@ public class WordGame extends AppCompatActivity {
             drawWord.setText("Draw word");
             WordScore.setText("SCORE: ");
             WordMistake.setText("MISTAKES: ");
-            IntwordPL = rand.nextInt(ENGWords.length);
+            IntwordPL = rand.nextInt(WordsENG.size());
         } else {
             drawWord.setText("Losuj slowo");
             WordScore.setText("PKT: ");
             WordMistake.setText("BLEDY: ");
-            IntwordPL = rand.nextInt(PLWords.length);
+            IntwordPL = rand.nextInt(WordsPL.size());
         }
         mistakes = 0;
         l1 = findViewById(R.id.letter1);
@@ -504,13 +508,9 @@ public class WordGame extends AppCompatActivity {
                 Numberormistakes.setText(""+mistakes);
                 rand = new Random();
                 if(lang){
-                    //ENGWords = removeElements(ENGWords, ENGWords[IntwordPL]);
-                    System.arraycopy(ENGWords, IntwordPL + 1, ENGWords, IntwordPL, ENGWords.length - 1 - IntwordPL);
-                    IntwordPL = rand.nextInt(ENGWords.length);
+                    IntwordPL = rand.nextInt(WordsENG.size());
                 }else{
-                    //PLWords = removeElements(PLWords, PLWords[IntwordPL]);
-                    System.arraycopy(PLWords, IntwordPL + 1, PLWords, IntwordPL, PLWords.length - 1 - IntwordPL);
-                    IntwordPL = rand.nextInt(PLWords.length);
+                    IntwordPL = rand.nextInt(WordsPL.size());
                 }
                 for (int i = 0; i< btnletters.length; i++){
                     blockButton(btnletters[i], true);
@@ -529,7 +529,7 @@ public class WordGame extends AppCompatActivity {
     }
 
     public Boolean ifLetterENG(CharSequence letter) {
-        String ltr = ENGWords[IntwordPL];
+        String ltr = WordsENG.get(IntwordPL);
         if (ltr.contains(letter)) {
             return true;
         } else {
@@ -539,7 +539,7 @@ public class WordGame extends AppCompatActivity {
         }
     }
     public Boolean ifLetterPL(CharSequence letter) {
-        String ltr = PLWords[IntwordPL];
+        String ltr = WordsPL.get(IntwordPL);
         if (ltr.contains(letter)) {
             return true;
         } else {
@@ -553,7 +553,7 @@ public class WordGame extends AppCompatActivity {
     }
     public void checkindexofletter(String letter) {
         if (!lang) {
-            index = PLWords[IntwordPL].indexOf(letter);
+            index = WordsPL.get(IntwordPL).indexOf(letter);
             while (index >= 0) {
                 showletter(index, letter);
                 if(checkTextView()){
@@ -568,10 +568,10 @@ public class WordGame extends AppCompatActivity {
                     editor.apply();
                     Toast.makeText(getApplicationContext(), "gratulacje", Toast.LENGTH_SHORT).show();
                 }
-                index = PLWords[IntwordPL].indexOf(letter, index + 1);
+                index = WordsPL.get(IntwordPL).indexOf(letter, index + 1);
             }
         } else {
-            index = ENGWords[IntwordPL].indexOf(letter);
+            index = WordsENG.get(IntwordPL).indexOf(letter);
             while (index >= 0) {
                 showletter(index, letter);
                 if(checkTextView()){
@@ -586,7 +586,7 @@ public class WordGame extends AppCompatActivity {
                     editor.apply();
                     Toast.makeText(getApplicationContext(), "CONGRATULATIONS", Toast.LENGTH_SHORT).show();
                 }
-                index = ENGWords[IntwordPL].indexOf(letter, index + 1);
+                index = WordsENG.get(IntwordPL).indexOf(letter, index + 1);
             }
         }
     }
@@ -604,14 +604,4 @@ public class WordGame extends AppCompatActivity {
             blockButton(btnletters[i], false);}
         return true;
     }
-    public static String[] removeElements(String[] input, String deleteMe) {
-        List result = new LinkedList();
-
-        for(String item : input)
-            if(!deleteMe.equals(item))
-                result.add(item);
-
-        return (String[]) result.toArray(input);
-    }
-
 }

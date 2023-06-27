@@ -9,7 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
   \__,_|___/___/_|\__, |_| |_|_| |_| |_|\___|_| |_|\__|  \___/|_|     \_/ \__,_|_|
                    __/ |
                    |___/*/
+        //arr.remove(1);
 
         language = findViewById(R.id.Lng);
         OpenFlashCards = findViewById(R.id.flashcards);

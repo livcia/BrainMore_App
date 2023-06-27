@@ -32,6 +32,7 @@
             android:textSize="30sp"
             android:text="0"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_below="@id/score"
         android:layout_alignParentEnd="true"
