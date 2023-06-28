@@ -23,6 +23,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="random number"/>
+    <Button
+        android:id="@+id/reset"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESTART GAME :)"/>
     <ImageView
         android:id="@+id/back_arrow"
         android:onClick="clickEvent"

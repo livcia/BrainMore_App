@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class Numbers_game extends AppCompatActivity {
 Boolean lang;
-Button Brandom, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15;
+Button Brandom, reset, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15;
 TextView write_number;
 Integer randomnumber;
 Button btns[];
@@ -30,6 +30,7 @@ ArrayList<Integer> numbers;
         Brandom = findViewById(R.id.random);
         write_number = findViewById(R.id.write_number);
         numbers = new ArrayList<Integer>();
+        reset = findViewById(R.id.reset);
         b1 = findViewById(R.id.b1);
         b2 = findViewById(R.id.b2);
         b3 = findViewById(R.id.b3);
@@ -56,6 +57,17 @@ ArrayList<Integer> numbers;
                 write_number.setText(""+randomnumber);
                 Brandom.setEnabled(false);
                 blockOrUnlock_all_buttons(true);
+            }
+        });
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for(Button btn: btns){
+                    btn.setText("");
+                    btn.setEnabled(false);
+                }
+                Brandom.setEnabled(true);
+                write_number.setText("");
             }
         });
         b1.setOnClickListener(new View.OnClickListener() {
@@ -154,12 +166,14 @@ ArrayList<Integer> numbers;
         startActivity(intent);
     }
     public void afterclick(Button whichbutotn){
-        Brandom.setEnabled(true);
-        whichbutotn.setTextSize(23);
-        whichbutotn.setText(""+randomnumber);
-        write_number.setText("");
-        blockOrUnlock_all_buttons(false);
-        Toastifsequence();
+        if(whichbutotn.getText() == "") {
+            Brandom.setEnabled(true);
+            whichbutotn.setTextSize(23);
+            whichbutotn.setText("" + randomnumber);
+            write_number.setText("");
+            blockOrUnlock_all_buttons(false);
+            Toastifsequence();
+        }
     }
     public void blockOrUnlock_all_buttons(Boolean BlockOrUnlock){
         for(int i = 0; i<btns.length ;i++){
