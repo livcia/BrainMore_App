@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 
 public class Numbers_game extends AppCompatActivity {
@@ -26,6 +29,7 @@ ArrayList<Integer> numbers;
         lang = intent.getBooleanExtra("PL_or_ENG", false);
         Brandom = findViewById(R.id.random);
         write_number = findViewById(R.id.write_number);
+        numbers = new ArrayList<Integer>();
         b1 = findViewById(R.id.b1);
         b2 = findViewById(R.id.b2);
         b3 = findViewById(R.id.b3);
@@ -42,7 +46,8 @@ ArrayList<Integer> numbers;
         b14 = findViewById(R.id.b14);
         b15 = findViewById(R.id.b15);
         btns = new Button[]{b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15};
-        numbers = new ArrayList<Integer>();
+        blockOrUnlock_all_buttons(false);
+
         Brandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -154,10 +159,28 @@ ArrayList<Integer> numbers;
         whichbutotn.setText(""+randomnumber);
         write_number.setText("");
         blockOrUnlock_all_buttons(false);
+        Toastifsequence();
     }
     public void blockOrUnlock_all_buttons(Boolean BlockOrUnlock){
         for(int i = 0; i<btns.length ;i++){
             btns[i].setEnabled(BlockOrUnlock);
+        }
+    }
+    public Boolean ifsequence(){
+        for(int i = 0; i<btns.length ;i++){
+            if(btns[i].getText() != ""){
+                numbers.add(Integer.parseInt(btns[i].getText().toString()));
+            }
+        }
+        ArrayList<Integer> sortedArrayList = new ArrayList<>(numbers);
+        Collections.sort(sortedArrayList);
+        return numbers.equals(sortedArrayList);
+    }
+    public void Toastifsequence(){
+        numbers.clear();
+        if(!ifsequence()){
+            Toast.makeText(getApplicationContext(),"LOSE! :(",Toast.LENGTH_SHORT).show();
+            Brandom.setEnabled(false);
         }
     }
 }
