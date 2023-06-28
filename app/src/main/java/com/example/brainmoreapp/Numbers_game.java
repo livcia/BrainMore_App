@@ -16,6 +16,7 @@ Boolean lang;
 Button Brandom, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15;
 TextView write_number;
 Integer randomnumber;
+Button btns[];
 ArrayList<Integer> numbers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ ArrayList<Integer> numbers;
         b13 = findViewById(R.id.b13);
         b14 = findViewById(R.id.b14);
         b15 = findViewById(R.id.b15);
+        btns = new Button[]{b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15};
         numbers = new ArrayList<Integer>();
         Brandom.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,131 +50,114 @@ ArrayList<Integer> numbers;
                 randomnumber = rand.nextInt(1000);
                 write_number.setText(""+randomnumber);
                 Brandom.setEnabled(false);
+                blockOrUnlock_all_buttons(true);
             }
         });
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b1.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b1);
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b2.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b2);
             }
         });
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b3.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b3);
             }
         });
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b4.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b4);
             }
         });
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                write_number.setText("");
-                b5.setText(""+randomnumber);
+                afterclick(b5);
             }
         });
         b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b6.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b6);
             }
         });
         b7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b7.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b7);
             }
         });
         b8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b8.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b8);
             }
         });
         b9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b9.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b9);
             }
         });
         b10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b10.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b10);
             }
         });
         b11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b11.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b11);
             }
         });
         b12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b12.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b12);
             }
         });
         b13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b13.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b13);
             }
         });
         b14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b14.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b14);
             }
         });
         b15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Brandom.setEnabled(true);
-                b15.setText(""+randomnumber);
-                write_number.setText("");
+                afterclick(b15);
             }
         });
     }
     public void clickEvent(View v) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
+    }
+    public void afterclick(Button whichbutotn){
+        Brandom.setEnabled(true);
+        whichbutotn.setTextSize(23);
+        whichbutotn.setText(""+randomnumber);
+        write_number.setText("");
+        blockOrUnlock_all_buttons(false);
+    }
+    public void blockOrUnlock_all_buttons(Boolean BlockOrUnlock){
+        for(int i = 0; i<btns.length ;i++){
+            btns[i].setEnabled(BlockOrUnlock);
+        }
     }
 }
