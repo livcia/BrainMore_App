@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button OpenFlashCards, OpenWordGame, OpenQuiz;
+    Button OpenFlashCards, OpenWordGame, OpenQuiz, NumbersGame;
     Switch language;
     String TextFlashcards, TextWordPlay;
     SharedPreferences.Editor editor;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                    __/ |
                    |___/*/
         //arr.remove(1);
-
+        NumbersGame = findViewById(R.id.numbers_game);
         language = findViewById(R.id.Lng);
         OpenFlashCards = findViewById(R.id.flashcards);
         OpenQuiz = findViewById(R.id.quiz);
@@ -78,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
         OpenWordGame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), WordGame.class);
+                intent.putExtra("PL_or_ENG", language.isChecked());
+                startActivity(intent);
+            }
+        });
+        NumbersGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Numbers_game.class);
                 intent.putExtra("PL_or_ENG", language.isChecked());
                 startActivity(intent);
             }

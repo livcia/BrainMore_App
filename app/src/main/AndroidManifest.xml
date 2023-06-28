@@ -13,6 +13,13 @@
         android:theme="@style/Theme.BrainMoreApp"
         tools:targetApi="31">
         <activity
+            android:name=".Numbers_game"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".WordGame"
             android:exported="false">
             <meta-data
