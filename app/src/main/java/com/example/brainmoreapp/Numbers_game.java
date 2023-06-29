@@ -25,12 +25,19 @@ ArrayList<Integer> numbers;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers_game);
-        Intent intent = getIntent();
-        lang = intent.getBooleanExtra("PL_or_ENG", false);
         Brandom = findViewById(R.id.random);
+        reset = findViewById(R.id.reset);
         write_number = findViewById(R.id.write_number);
         numbers = new ArrayList<Integer>();
-        reset = findViewById(R.id.reset);
+        Intent intent = getIntent();
+        lang = intent.getBooleanExtra("PL_or_ENG", false);
+        if(lang){
+            reset.setText("RESTART GAME :)");
+            Brandom.setText("RANDOM NUMBER");
+        }else{
+            reset.setText("ZACZNIJ OD NOWA");
+            Brandom.setText("LOSUJ CYFRE");
+        }
         b1 = findViewById(R.id.b1);
         b2 = findViewById(R.id.b2);
         b3 = findViewById(R.id.b3);
