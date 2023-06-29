@@ -35,7 +35,7 @@ ArrayList<Integer> numbers;
             reset.setText("RESTART GAME :)");
             Brandom.setText("RANDOM NUMBER");
         }else{
-            reset.setText("ZACZNIJ OD NOWA");
+            reset.setText("OD NOWA");
             Brandom.setText("LOSUJ CYFRE");
         }
         b1 = findViewById(R.id.b1);
