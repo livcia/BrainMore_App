@@ -507,10 +507,10 @@ public class WordGame extends AppCompatActivity {
                 mistakes = 0;
                 Numberormistakes.setText(""+mistakes);
                 rand = new Random();
-                if(lang){
+                if(lang && WordsENG.size() != 1){
                     WordsENG.remove(IntwordPL);
                     IntwordPL = rand.nextInt(WordsENG.size());
-                }else{
+                }else if(WordsENG.size() != 1){
                     WordsPL.remove(IntwordPL);
                     IntwordPL = rand.nextInt(WordsPL.size());
                 }
