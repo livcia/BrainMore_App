@@ -12,8 +12,17 @@
         android:layout_height="70dp"
         android:src="@drawable/arrow"
         />
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ask"
+        android:text="next question"
+        android:id="@+id/next_question"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"/>
 
     <TextView
+        android:id="@+id/ask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -28,10 +37,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/b1"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="80dp"/>
         <Button
+            android:id="@+id/b2"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="80dp"/>
@@ -44,10 +55,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/b3"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="80dp"/>
         <Button
+            android:id="@+id/b4"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="80dp"/>
