@@ -10,12 +10,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class Quiz extends AppCompatActivity {
     TextView TextViewquestion;
-    Button b1, b2, b3, b4;
+    Button btn1, btn2, btn3, btn4;
     Random rand;
     int indexofquestion;
     @Override
@@ -28,18 +30,29 @@ public class Quiz extends AppCompatActivity {
                 "rstu",
                 "wxyz"
         };
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("abcd", "d");
+        map.put("efgh", "h");
+        map.put("ijkl", "l");
+        map.put("mnop", "p");
+        map.put("rstu", "u");
+        map.put("wxyz", "z");
         List<String> Listquestions = new ArrayList<>(Arrays.asList(questions));
-        b1 = findViewById(R.id.b1);
-        b2 = findViewById(R.id.b2);
-        b3 = findViewById(R.id.b3);
-        b4 = findViewById(R.id.b4);
+        btn1 = findViewById(R.id.b1);
+        btn2 = findViewById(R.id.b2);
+        btn3 = findViewById(R.id.b3);
+        btn4 = findViewById(R.id.b4);
         rand = new Random();
         indexofquestion = rand.nextInt(Listquestions.size());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         Intent intent = getIntent();
         Boolean lang = intent.getBooleanExtra("PL_or_ENG",false);
         TextViewquestion = findViewById(R.id.ask);
+        String test = map.get(Listquestions.get(indexofquestion));
+        TextViewquestion.setText(test);
+
     }
     public void clickEvent(View v)
     {
