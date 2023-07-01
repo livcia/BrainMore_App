@@ -9,12 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         });
         OpenQuiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Quiz.class);
+                Intent intent = new Intent(getApplicationContext(), Quizz.class);
                 intent.putExtra("PL_or_ENG", language.isChecked());
                 startActivity(intent);
             }

@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class Quiz extends AppCompatActivity {
     TextView TextViewquestion;
-    Button btn1, btn2, btn3, btn4;
+    Button btn1, btn2, btn3, btn4, next;
     Random rand;
     int indexofquestion;
     @Override
@@ -29,6 +29,14 @@ public class Quiz extends AppCompatActivity {
                 "mnop",
                 "rstu",
                 "wxyz"
+        };
+        String[] answers = new String[]{
+          "a", "b", "c", "d",
+          "e", "f", "g", "h",
+          "i", "j", "k", "l",
+          "m", "n", "o", "p",
+          "r", "s", "t", "u",
+          "w", "x", "y", "z"
         };
         Map<String, String> map = new HashMap<String, String>();
         map.put("abcd", "d");
@@ -42,9 +50,9 @@ public class Quiz extends AppCompatActivity {
         btn2 = findViewById(R.id.b2);
         btn3 = findViewById(R.id.b3);
         btn4 = findViewById(R.id.b4);
+        next = (Button) findViewById(R.id.next_question);
         rand = new Random();
         indexofquestion = rand.nextInt(Listquestions.size());
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         Intent intent = getIntent();
@@ -52,7 +60,6 @@ public class Quiz extends AppCompatActivity {
         TextViewquestion = findViewById(R.id.ask);
         String test = map.get(Listquestions.get(indexofquestion));
         TextViewquestion.setText(test);
-
     }
     public void clickEvent(View v)
     {
