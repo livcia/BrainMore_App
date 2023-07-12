@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class Quizz extends AppCompatActivity {
     String[] questions, answers;
     Button [] btns;
     Map<String, String> map;
-    Button btn1, btn2, btn3, btn4;
+    Button btn1, btn2, btn3, btn4, next_question;
     Random rand;
     int indexofquestion;
     @Override
@@ -54,9 +55,15 @@ public class Quizz extends AppCompatActivity {
         btn2 = findViewById(R.id.b2);
         btn3 = findViewById(R.id.b3);
         btn4 = findViewById(R.id.b4);
+        next_question = findViewById(R.id.next_question);
         btns = new Button[]{btn1, btn2, btn3, btn4};
         btn1.setText("dd");
         rand = new Random();
-        indexofquestion = rand.nextInt(Listquestions.size());
+        next_question.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                indexofquestion = rand.nextInt(Listquestions.size());
+            }
+        });
     }
 }
