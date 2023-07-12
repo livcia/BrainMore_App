@@ -15,6 +15,7 @@ import java.util.Random;
 
 public class Quizz extends AppCompatActivity {
     String[] questions, answers;
+    Button [] btns;
     Map<String, String> map;
     Button btn1, btn2, btn3, btn4;
     Random rand;
@@ -53,6 +54,7 @@ public class Quizz extends AppCompatActivity {
         btn2 = findViewById(R.id.b2);
         btn3 = findViewById(R.id.b3);
         btn4 = findViewById(R.id.b4);
+        btns = new Button[]{btn1, btn2, btn3, btn4};
         btn1.setText("dd");
         rand = new Random();
         indexofquestion = rand.nextInt(Listquestions.size());
