@@ -69,6 +69,7 @@ public class Quizz extends AppCompatActivity {
         next_question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                next_question.setVisibility(View.INVISIBLE);
                 indexofquestion = rand.nextInt(Listquestions.size());
                 question.setText(Listquestions.get(indexofquestion));
                 answers.add(ListAllAnswers.get(indexofquestion*4));
@@ -80,6 +81,30 @@ public class Quizz extends AppCompatActivity {
                     btns[i].setText(answers.get(i));
                 }
                 answers.clear();
+            }
+        });
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                next_question.setVisibility(View.VISIBLE);
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                next_question.setVisibility(View.VISIBLE);
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                next_question.setVisibility(View.VISIBLE);
+            }
+        });
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                next_question.setVisibility(View.VISIBLE);
             }
         });
     }
