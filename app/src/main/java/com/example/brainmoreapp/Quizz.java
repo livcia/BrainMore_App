@@ -1,8 +1,10 @@
 package com.example.brainmoreapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +26,7 @@ public class Quizz extends AppCompatActivity {
     Button btn1, btn2, btn3, btn4, next_question;
     Random rand;
     List<String> answers;
+    List<String> Listquestions;
     TextView question;
     int indexofquestion;
     @Override
@@ -49,7 +52,7 @@ public class Quizz extends AppCompatActivity {
         Intent intent = getIntent();
         Boolean lang = intent.getBooleanExtra("PL_or_ENG",false);
         map = new HashMap<String, String>();
-        List<String> Listquestions = new ArrayList<>(Arrays.asList(questions));
+        Listquestions = new ArrayList<>(Arrays.asList(questions));
         List<String> ListAllAnswers = new ArrayList<>(Arrays.asList(allanswers));
         map.put("abcd", "d");
         map.put("efgh", "h");
@@ -78,37 +81,50 @@ public class Quizz extends AppCompatActivity {
                 answers.add(ListAllAnswers.get(indexofquestion*4+2));
                 answers.add(ListAllAnswers.get(indexofquestion*4+3));
                 Collections.shuffle(answers);
+                int color = ContextCompat.getColor(getApplicationContext(), R.color.purple_500);
                 for(int i = 0; i<4 ;i++){
+                    btns[i].setBackgroundColor(color);
                     btns[i].setText(answers.get(i));
                 }
                 answers.clear();
+
             }
         });
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 next_question.setVisibility(View.VISIBLE);
-                btn1.setBackgroundColor(0xFFFF0000);
-                btn2.setBackgroundColor(Color.GREEN);
+                checkanswer(btn1);
+
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 next_question.setVisibility(View.VISIBLE);
+                checkanswer(btn2);
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 next_question.setVisibility(View.VISIBLE);
+                checkanswer(btn3);
             }
         });
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 next_question.setVisibility(View.VISIBLE);
+                checkanswer(btn4);
             }
         });
+    }
+    public void checkanswer(Button btn){
+        if (btn.getText() == map.get(Listquestions.get(indexofquestion))){
+            btn.setBackgroundColor(Color.GREEN);
+        }else {
+            btn.setBackgroundColor(0xFFFF0000);
+        }
     }
 }
