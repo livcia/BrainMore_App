@@ -3,6 +3,7 @@ package com.example.brainmoreapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -87,6 +88,8 @@ public class Quizz extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 next_question.setVisibility(View.VISIBLE);
+                btn1.setBackgroundColor(0xFFFF0000);
+                btn2.setBackgroundColor(Color.GREEN);
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
